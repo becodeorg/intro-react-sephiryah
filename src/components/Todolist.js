@@ -19,7 +19,7 @@ function Checkbox() {
 
 export default function TodoList() {
     const initialTodos = ["Sleep (a lot)", "Download TailwindCSS", "Finish Todo List application"];
-    const [todos, setTodos] = useState(initialTodos);
+    const [todos] = useState(initialTodos);
     return (
         <div>
             <h2 className="text-2xl font-bold mb-5">My Todo-list</h2>
