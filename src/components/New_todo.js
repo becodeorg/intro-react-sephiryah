@@ -7,7 +7,7 @@ function SubmitButton() {
 export default function Newtodo() {
     return (
         <div>
-            <input placeholder="Type a new todo" className=""></input>
+            <input placeholder="Type a new todo" className="rounded-lg w-3/4 md:w-1/2 xl:w-1/4"></input>
             <SubmitButton />
         </div>
     );

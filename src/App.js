@@ -5,7 +5,7 @@ import TodoList from './components/Todolist.js';
 
 function App() {
   return (
-    <div className="bg-sky-300 mx-52 my-20 py-10 rounded-3xl">
+    <div className="bg-sky-300 mx-10 my-20 py-10 rounded-3xl md:mx-40 lg:mx-80">
       <Header />
       <Newtodo />
       <TodoList />
