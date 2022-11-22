@@ -1,12 +1,15 @@
-import React, { useRef , useState } from 'react';
+import React, { useRef , useState, useEffect } from 'react';
 
 import './App.css';
 import Newtodo from './components/New_todo';
 import TodoList from './components/TodoList';
 
+const LSKEY = 'MyTodoApp';
+
 function App() {
   const inputRef = useRef();
-  const initialTodos = ["Sleep (a lot)", "Download TailwindCSS", "Finish Todo List application"];
+  
+  let initialTodos = [];
 
   const [todos, setTodos] = useState(initialTodos);
 
@@ -16,9 +19,21 @@ function App() {
     const newTodos = JSON.parse(JSON.stringify(todos));
     newTodos.push(inputElement.value);
     setTodos(newTodos);
+    console.log(newTodos);
 
-    console.log(inputElement.value);
+
+    //console.log(inputElement.value);
 }
+
+  useEffect(() => {
+    if (todos.length > 0){
+      localStorage.setItem(LSKEY + ".todos", JSON.stringify(todos));}
+  },[todos]);
+
+  useEffect(() => {
+    const stockedTodos = JSON.parse(window.localStorage.getItem(LSKEY + ".todos"));
+    setTodos(stockedTodos);
+  }, []);
 
   return (
     <div className="bg-gray-400 mx-10 my-20 py-10 rounded-3xl md:mx-40 lg:mx-80">
