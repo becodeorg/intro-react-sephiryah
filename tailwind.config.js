@@ -3,9 +3,8 @@ module.exports = {
   content: [
     "./public/index.html",
     "./src/App.js",
-    "./src/components/Header.js",
-    "./src/components/New_todo.js",
-    "./src/components/Todolist.js",
+    "./src/components/New_todo.jsx",
+    "./src/components/TodoList.jsx",
   ],
   theme: {
     extend: {},

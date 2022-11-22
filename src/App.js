@@ -13,7 +13,7 @@ function App() {
   function clickHandler() {
     const inputElement = inputRef.current;
 
-    const newTodos = [...initialTodos];
+    const newTodos = JSON.parse(JSON.stringify(todos));
     newTodos.push(inputElement.value);
     setTodos(newTodos);
 
@@ -21,7 +21,8 @@ function App() {
 }
 
   return (
-    <div className="bg-sky-300 mx-10 my-20 py-10 rounded-3xl md:mx-40 lg:mx-80">
+    <div className="bg-gray-400 mx-10 my-20 py-10 rounded-3xl md:mx-40 lg:mx-80">
+      <h1 className="text-5xl pb-16">My To-do List</h1>
       <Newtodo inputRef={inputRef} clickHandler={clickHandler}/>
       <TodoList todos={todos}/>
     </div>
