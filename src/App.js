@@ -6,13 +6,16 @@ import TodoList from './components/TodoList';
 
 const LSKEY = 'MyTodoApp';
 
+
 function App() {
   const inputRef = useRef();
   
   let initialTodos = [];
-  initialTodos = JSON.parse(window.localStorage.getItem(LSKEY + ".todos"));
 
-  const [todos, setTodos] = useState(initialTodos);
+  const [todos, setTodos] = useState(() => {
+    initialTodos = JSON.parse(localStorage.getItem(LSKEY + ".todos"));
+    return initialTodos || [];
+  });
 
   function clickHandler() {
     const inputElement = inputRef.current;
