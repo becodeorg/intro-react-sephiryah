@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 
-export default function TodoList({todos}) {
+export default function TodoList(props) {
     const [check, setCheck] = useState(false);
-
+    const todos = props.todos;
     const handleChange = event => {
         if (event.target.checked) {
           console.log('✅ Checkbox is checked');
