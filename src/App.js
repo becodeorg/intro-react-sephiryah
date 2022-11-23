@@ -9,7 +9,8 @@ const LSKEY = 'MyTodoApp';
 function App() {
   const inputRef = useRef();
   
-  let initialTodos = JSON.parse(window.localStorage.getItem(LSKEY + ".todos"));;
+  let initialTodos = [];
+  initialTodos = JSON.parse(window.localStorage.getItem(LSKEY + ".todos"));
 
   const [todos, setTodos] = useState(initialTodos);
 
