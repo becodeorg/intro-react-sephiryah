@@ -15,7 +15,15 @@ export default function TodoList({todos}) {
         
       };
 
-    return (
+    if (todos.length === 0) {
+      return (
+        <div>
+          <h2 className="text-xl font-bold mb-5 lg:text-2xl">My Todo-list</h2>
+        </div>
+      )
+    }
+    else {
+      return (
         <div>
             <h2 className="text-xl font-bold mb-5 lg:text-2xl">My Todo-list</h2>
             <div className="mx-10 md:mx-30">
@@ -27,4 +35,5 @@ export default function TodoList({todos}) {
             </div>
         </div>
     );
+    }
 }
